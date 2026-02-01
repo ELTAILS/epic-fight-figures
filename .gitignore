@@ -1,0 +1,15 @@
+/vendor/
+/node_modules/
+
+/.env
+.env.local
+
+.DS_Store
+Thumbs.db
+
+/public/uploads/
+
+/logs/
+/tmp/
+
+*.log
