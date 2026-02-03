@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --cor-principal: #FFA500;
+    --cor-segundaria: #222222;
+    --cor-terciaria: #f6f6f6;
+    --cor-quatenaria: #483C32;
+    --cor-escrita: #121212;
+}
+
+header .col-4 a {
+    font-size: 1.15rem;
+}
+
+/* ===== HEADER BASE ===== */
+header {
+    background: var(--cor-segundaria);
+    padding: 10px 0;
+    color: var(--cor-terciaria);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* ===== LOGO ===== */
+.imgLogo img {
+    width: 125px;
+    margin-left: 1rem;
+}
+
+/* ===== TOPO (logo + busca + ações) ===== */
+header .d-flex {
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ===== BARRA DE PESQUISA ===== */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#busca {
+    width: 100%;
+    max-width: 600px;
+    padding: 8px 12px;
+    border-radius: 6px 0 0 6px;
+    border: none;
+    outline: none;
+}
+
+form button {
+    background: var(--cor-principal);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 0 6px 6px 0;
+    color: var(--cor-segundaria);
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #ff8c00;
+}
+
+/* ===== LOGIN E CARRINHO ===== */
+header .nav {
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+header .nav-link {
+    color: var(--cor-terciaria);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.3s;
+}
+
+header .nav-link:hover {
+    color: var(--cor-principal);
+}
+
+/* ===== NAVBAR DE CATEGORIAS ===== */
+header > nav {
+    background: var(--cor-quartenaria);
+    margin-top: 10px;
+    padding: 6px 0;
+}
+
+header > nav .nav-link {
+    color: var(--cor-terciaria);
+    font-size: 14px;
+    padding: 6px 12px;
+    transition: 0.3s;
+}
+
+header > nav .nav-link:hover {
+    color: var(--cor-principal);
+    background: rgba(255,255,255,0.05);
+    border-radius: 4px;
+}
+
+/* Footer */
+
+footer {
+    background-color: var(--cor-segundaria);
+}
+
+footer .social-media i:hover {
+    color: var(--cor-principal);
+}
+
+footer .footer-menu a{
+    color: var(--cor-terciaria);
+    text-transform: uppercase;
+    transition: ease-in-out 0.4s;
+}
+
+footer .footer-menu a:hover {
+    color: var(--cor-principal);
+}
