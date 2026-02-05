@@ -21,7 +21,7 @@
         <div class="d-flex p-2">
             <!--Img Logo-->
             <div class="imgLogo">
-                <a href="index.php"><img src="assets/img/logo.png" alt="Logo do site"></a>
+                <a href="?url=/"><img src="assets/img/logo.png" alt="Logo do site"></a>
             </div>
             
             <div class="container text-center teste">
@@ -48,7 +48,7 @@
         <nav>
             <ul class="nav justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Todas as categorias</a>
+                    <a class="nav-link" href="?url=mangas">Todas as categorias</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Shonen</a>
@@ -72,7 +72,7 @@
                     <a class="nav-link" href="#">Slice of Life</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">action figures</a>
+                    <a class="nav-link" href="?url=actionFigures">action figures</a>
                 </li>
             </ul>
         </nav>

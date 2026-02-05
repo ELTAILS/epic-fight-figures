@@ -12,8 +12,8 @@
                 <div class="col">
                     <h4>Menu</h4>
                     <ul class="list-unstyled pt-2 footer-menu">
-                        <li class="py-1"><a href="#">Sobre mim</a></li>
-                        <li class="py-1"><a href="#">LEGAL</a></li>
+                        <li class="py-1"><a href="?url=sobreMim">Sobre mim</a></li>
+                        <li class="py-1"><a href="?url=legal">LEGAL</a></li>
                     </ul>
                 </div>
                 <div class="col">
@@ -43,7 +43,7 @@
             </div>
             <hr>
             <div class="d-sm-flex justify-content-between py-1">
-                <p>2026 © Wagner da Silva Junior | Programador de PHP e JavaSript</p>
+                <p>© <?= date('Y') ?> Wagner da Silva Junior | Programador de PHP e JavaSript</p>
                 <p>Site de demonstração</p>
             </div>
         </div>
