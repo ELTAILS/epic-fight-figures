@@ -3,28 +3,39 @@
 namespace App\Controllers;
 
 class PagesController {
+
+    private function render(string $view) {
+        require_once __DIR__ . '/../Views/layouts/header.php';
+        require_once __DIR__ . "/../Views/pages/$view.php";
+        require_once __DIR__ . '/../Views/layouts/footer.php';
+    }
+
     public function index(): void {
-        include_once __DIR__ . "/../Views/pages/index.php";
+        $this->render('index');
     }
 
     public function erro(): void {
-        include_once __DIR__ . "/../Views/pages/erro.php";
+        $this->render('erro');
     }
     
     public function mangas(): void {
-        include_once __DIR__ . "/../Views/pages/mangas.php";
+        $this->render('mangas');
     }
 
     public function actionFigures(): void {
-        include_once __DIR__ . "/../Views/pages/ActionFigures.php";
+        $this->render('actionFigures');
     }
 
     public function sobreMim(): void {
-        include_once __DIR__ . "/../Views/pages/sobreMim.php";
+        $this->render('sobreMim');
     }
 
     public function legal(): void {
-        include_once __DIR__ . "/../Views/pages/legal.php";
+        $this->render('legal');
+    }
+
+    public function buscar(): void {
+        // $this->render('buscar');
     }
 
 }

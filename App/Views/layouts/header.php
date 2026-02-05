@@ -28,7 +28,8 @@
                 <div class="row">
                     <!--Barra de pesquisa-->
                     <div class="col-8">
-                        <form method="get">
+                        <form method="get" class="search-bar">
+                            <input type="hidden" name="url" value="buscar">
                             <input type="search" name="busca" id="busca" placeholder="O que procura?">
                             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>

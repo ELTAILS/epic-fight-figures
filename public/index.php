@@ -11,9 +11,6 @@ $url = $_GET['url'] ?? '/';
 //Chama o controller
 $controllerPages = new PagesController;
 
-//header inicio do site
-include_once __DIR__ . "/../App/Views/layouts/header.php";
-
 //Escolhe a pagina baseado na URL
 switch($url){
     case '/':
@@ -31,10 +28,11 @@ switch($url){
     case 'legal':
         $controllerPages->legal(); // sobre a parte legal do site
         break;
+    case 'buscar':
+        // $controllerPages->buscar();
+        header('Location: ?url=/');
+        break;
     default:
         $controllerPages->erro(); // Pagina de erro
         break;
 }
-
-//Footer
-include_once __DIR__ . "/../App/Views/layouts/footer.php";
