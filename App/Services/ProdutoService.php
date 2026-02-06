@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Services;
+
+use App\Repository\ProdutosRepository;
+
+class ProdutoService {
+    public function __construct(private ProdutosRepository $repo){}
+
+    public function listarDestaques(int $limite = 4): array {
+        $produtos = $this->repo->listarProdutos();
+        shuffle($produtos);
+        return array_slice($produtos, 0, $limite);
+    }
+
+    public function listarPorCategoria(string $categoria): array {
+        return $this->repo->listarPorCategoria($categoria);
+    }
+
+    public function buscar(string $nome): array {
+        return $this->repo->buscarPorNome($nome);
+    }
+
+}

@@ -29,8 +29,7 @@ switch($url){
         $controllerPages->legal(); // sobre a parte legal do site
         break;
     case 'buscar':
-        // $controllerPages->buscar();
-        header('Location: ?url=/');
+        $controllerPages->buscar();
         break;
     default:
         $controllerPages->erro(); // Pagina de erro

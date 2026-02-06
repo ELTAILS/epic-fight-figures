@@ -1,5 +1,11 @@
 /* ===== TABLET ===== */
+
+
 @media (max-width: 992px) {
+    .imgLogo img {
+        display: none;
+    }
+
     header .d-flex {
         flex-direction: column;
         gap: 10px;
@@ -17,9 +23,6 @@
 
 /* ===== CELULAR ===== */
 @media (max-width: 576px) {
-    .imgLogo img {
-        display: none;
-    }
 
     header > nav ul {
         flex-wrap: wrap;
@@ -33,5 +36,21 @@
 
     header .col-4 a {
         font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .produto-card {
+        min-width: 180px;
+        max-width: 180px;
+    }
+
+    .produto-card img {
+        height: 150px;
+    }
+
+    .vitrine-btn {
+        width: 32px;
+        height: 32px;
     }
 }

@@ -1,11 +1,10 @@
-<h2>📚 Mangás</h2>
+<h2>🔎 Resultados</h2>
 <section class="vitrine-container">
     <button class="vitrine-btn left" onclick="scrollVitrine(-1)">
         <i class="fa-solid fa-chevron-left"></i>
     </button>
 
     <div class="vitrine" id="vitrine">
-
         <?php foreach ($produtos as $produto): ?>
             <div class="produto-card m-auto">
                 <img src="assets/img/produtos/<?= $produto['imagem'] ?>" alt="<?= $produto['nome'] ?>">
@@ -15,7 +14,6 @@
                 <button class="btn-carrinho">Comprar</button>
             </div>
         <?php endforeach; ?>
-
     </div>
 
     <button class="vitrine-btn right" onclick="scrollVitrine(1)">

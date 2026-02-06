@@ -2,16 +2,31 @@
 
 namespace App\Controllers;
 
+use App\Database\Conexao;
+use App\Services\ProdutoService;
+use App\Repository\ProdutosRepository;
+
 class PagesController {
 
-    private function render(string $view) {
+    private ProdutoService $service;
+
+    public function __construct() {
+        $conexao = new Conexao;
+        $repo = new ProdutosRepository($conexao->getPdo());
+        $this->service = new ProdutoService($repo); 
+    }
+
+    private function render(string $view, array $dados = []) {
+        extract($dados);
+
         require_once __DIR__ . '/../Views/layouts/header.php';
         require_once __DIR__ . "/../Views/pages/$view.php";
         require_once __DIR__ . '/../Views/layouts/footer.php';
     }
-
+    
     public function index(): void {
-        $this->render('index');
+        $produtos = $this->service->listarDestaques(4);
+        $this->render('index', ['produtos' => $produtos]);
     }
 
     public function erro(): void {
@@ -19,11 +34,13 @@ class PagesController {
     }
     
     public function mangas(): void {
-        $this->render('mangas');
+        $produtos = $this->service->listarPorCategoria('mangas');
+        $this->render('mangas', ['produtos' => $produtos]);
     }
 
     public function actionFigures(): void {
-        $this->render('actionFigures');
+        $produtos = $this->service->listarPorCategoria('actionFigures');
+        $this->render('actionFigures', ['produtos' => $produtos]);
     }
 
     public function sobreMim(): void {
@@ -35,7 +52,9 @@ class PagesController {
     }
 
     public function buscar(): void {
-        // $this->render('buscar');
+        $nome = $_GET['busca'] ?? '';
+        $produtos = $this->service->buscar($nome);
+        $this->render('buscar',['produtos' => $produtos]);
     }
 
 }
