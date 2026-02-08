@@ -1,17 +1,23 @@
-function scrollVitrine(direction) {
-    const vitrine = document.getElementById('vitrine');
-    if (!vitrine) return;
+document.addEventListener("DOMContentLoaded", function () {
 
-    const cards = vitrine.querySelectorAll('.produto-card');
-    if (cards.length === 0) return;
+    document.querySelectorAll(".vitrine-container").forEach(container => {
+        const vitrine = container.querySelector(".vitrine");
+        const btnLeft = container.querySelector(".vitrine-btn.left");
+        const btnRight = container.querySelector(".vitrine-btn.right");
 
-    const cardStyle = window.getComputedStyle(cards[0]);
-    const gap = parseInt(window.getComputedStyle(vitrine).gap) || 0;
+        const card = vitrine.querySelector(".produto-card");
+        if (!card) return;
 
-    const cardWidth = cards[0].offsetWidth + gap;
+        const gap = 20;
+        const scrollAmount = card.offsetWidth + gap;
 
-    vitrine.scrollBy({
-        left: direction * cardWidth * 2,
-        behavior: 'smooth'
+        btnRight.addEventListener("click", () => {
+            vitrine.scrollBy({ left: scrollAmount * 4, behavior: "smooth" });
+        });
+
+        btnLeft.addEventListener("click", () => {
+            vitrine.scrollBy({ left: -scrollAmount * 4, behavior: "smooth" });
+        });
     });
-}
+
+});
