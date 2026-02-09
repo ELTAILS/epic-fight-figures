@@ -80,4 +80,17 @@
     .promo-img img {
         width: 200px;
     }
+
+    .produto-img {
+        max-height: 300px;
+    }
+
+    .produto-preco {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .box-compra {
+        margin-top: 20px;
+    }
 }

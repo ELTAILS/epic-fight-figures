@@ -30,6 +30,15 @@ class ProdutosRepository {
         return $stmt->fetchAll();
     }
 
+    public function buscarPorId(int $id): ?array {
+        $sql = "SELECT * FROM produtos WHERE id = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':id',$id);
+        $stmt->execute();
+        $produto = $stmt->fetch();
+        return $produto ?: null;
+    }
+
     //criar,excluir e editar vai ser criado quando fazer a pagina ADM
 
 }

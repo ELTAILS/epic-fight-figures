@@ -57,4 +57,16 @@ class PagesController {
         $this->render('buscar',['produtos' => $produtos]);
     }
 
+    public function buscarPorId(): void {
+        $id = $_GET['id'] ?? null;
+        $produto = $this->service->produtoPorId((int)$id);
+
+        if (!$produto) {
+            $this->render('erro');
+            return;
+        }
+
+        $this->render('produto',['produto' => $produto]);
+    }
+
 }

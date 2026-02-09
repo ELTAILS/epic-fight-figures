@@ -31,6 +31,9 @@ switch($url){
     case 'buscar':
         $controllerPages->buscar();
         break;
+    case 'produto':
+        $controllerPages->buscarPorId();
+        break;
     default:
         $controllerPages->erro(); // Pagina de erro
         break;

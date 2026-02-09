@@ -186,17 +186,22 @@ footer .footer-menu a:hover {
     margin: 10px 0;
 }
 
-.btn-carrinho {
-    width: 100%;
+.btn-produto {
+    text-align: center;
+}
+
+.btn-produto a {
+    width: 100% !important;
     background: var(--cor-principal);
     color: white;
+    text-decoration: none;
     border: none;
     padding: 8px;
     border-radius: 6px;
     transition: 0.2s;
 }
 
-.btn-carrinho:hover {
+.btn-produto a:hover {
     background: #e69500;
 }
 
@@ -399,5 +404,116 @@ footer .footer-menu a:hover {
 
 
 .legal-card .card-body {
+    font-size: 14px;
+}
+
+/* Produtos */
+
+/* ===== PÁGINA DO PRODUTO ===== */
+.produto {
+    background: var(--cor-terciaria);
+}
+
+.produto-img {
+    max-height: 420px;
+    object-fit: contain;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.produto-titulo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--cor-segundaria);
+    margin-bottom: 15px;
+}
+
+.produto-descricao {
+    font-size: 15px;
+    color: var(--cor-escrita);
+    line-height: 1.6;
+}
+
+/* ===== BOX DE COMPRA ===== */
+.box-compra {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    width: 100%;
+    max-width: 100%;
+}
+
+.box-compra * {
+    max-width: 100%;
+}
+
+.produto-preco {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--cor-principal);
+}
+
+/* BOTÕES */
+.btn-comprar {
+    background: var(--cor-principal);
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.btn-comprar:hover {
+    background: #e69500;
+    color: white;
+}
+
+.btn-carrinho {
+    border: 2px solid var(--cor-principal);
+    color: var(--cor-principal);
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.btn-carrinho:hover {
+    background: var(--cor-principal);
+    color: white;
+}
+
+/* FRETE */
+.frete-box {
+    display: flex;
+    gap: 10px;
+}
+
+.frete-box input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.frete-box button {
+    background: var(--cor-segundaria);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+
+/* ===== FICHA TÉCNICA ===== */
+.ficha-tecnica {
+    margin-top: 60px;
+}
+
+.accordion-button {
+    font-weight: 600;
+}
+
+.list-group-item {
     font-size: 14px;
 }

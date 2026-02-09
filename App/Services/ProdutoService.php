@@ -21,4 +21,8 @@ class ProdutoService {
         return $this->repo->buscarPorNome($nome);
     }
 
+    public function produtoPorId(int $id): ?array {
+        return $this->repo->buscarPorId($id);
+    }
+
 }

@@ -11,7 +11,7 @@
                 <h5><?= $produto['nome'] ?></h5>
                 <p><?= $produto['descricao'] ?></p>
                 <span class="preco">R$ <?= number_format($produto['preco'], 2, ',', '.') ?></span>
-                <button class="btn-carrinho">Comprar</button>
+                <div class="btn-produto"><a href="?url=produto&id=<?= $produto['id'] ?>">Comprar</a></div>
             </div>
         <?php endforeach; ?>
     </div>
