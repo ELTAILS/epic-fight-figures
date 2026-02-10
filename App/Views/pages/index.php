@@ -7,13 +7,13 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <a href="#"><img src="assets/img/carrossel/index/site.png" class="d-block w-100" alt="imagem carrossel 1"></a>
+            <a href="#"><img src="assets/img/carrossel/site.png" class="d-block w-100" alt="imagem carrossel 1"></a>
         </div>
         <div class="carousel-item">
-            <a href="?url=mangas"><img src="assets/img/carrossel/index/mangas.png" class="d-block w-100" alt="imagem carrossel 2"></a>
+            <a href="?url=mangas"><img src="assets/img/carrossel/mangas.png" class="d-block w-100" alt="imagem carrossel 2"></a>
         </div>
         <div class="carousel-item">
-            <a href="?url=actionFigures"><img src="assets/img/carrossel/index/actionFigures.png" class="d-block w-100" alt="imagem carrossel 3"></a>
+            <a href="?url=actionFigures"><img src="assets/img/carrossel/actionFigures.png" class="d-block w-100" alt="imagem carrossel 3"></a>
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

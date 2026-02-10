@@ -517,3 +517,14 @@ footer .footer-menu a:hover {
 .list-group-item {
     font-size: 14px;
 }
+
+/* sobre mim e legal */
+
+section h1 {
+    font-weight: bold;
+    color: #ff9800;
+}
+
+.card {
+    border-radius: 12px;
+}
