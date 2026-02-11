@@ -528,3 +528,68 @@ section h1 {
 .card {
     border-radius: 12px;
 }
+
+/* ===== PÁGINA DE PRODUTOS ===== */
+.pagina-produtos {
+    margin-top: 30px;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar-filtros {
+    background: var(--cor-terciaria);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.titulo-filtro {
+    color: var(--cor-segundaria);
+    border-bottom: 2px solid var(--cor-principal);
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.filtro-box {
+    margin-bottom: 20px;
+}
+
+.filtro-box h6 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--cor-quartenaria);
+}
+
+.filtro-box input,
+.filtro-box select {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.form-check-label {
+    cursor: pointer;
+}
+
+/* ===== BOTÃO FILTRO ===== */
+.sidebar-filtros .btn-warning {
+    background: var(--cor-principal);
+    border: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.sidebar-filtros .btn-warning:hover {
+    filter: brightness(0.9);
+}
+
+/* ===== ÁREA DE PRODUTOS ===== */
+.area-produtos {
+    padding-left: 25px;
+}
+
+form {
+    display: block;
+}

@@ -7,14 +7,22 @@ use App\Repository\ProdutosRepository;
 class ProdutoService {
     public function __construct(private ProdutosRepository $repo){}
 
-    public function listarDestaques(int $limite = 4): array {
+    public function listarDestaques(): array {
         $produtos = $this->repo->listarProdutos();
         shuffle($produtos);
-        return array_slice($produtos, 0, $limite);
+        return $produtos;
     }
 
     public function listarPorCategoria(string $categoria): array {
-        return $this->repo->listarPorCategoria($categoria);
+        $categoria = $this->repo->listarPorCategoria($categoria);
+        shuffle($categoria);
+        return $categoria;
+    }
+
+    public function listarPorGenero(string $genero): array {
+        $genero = $this->repo->buscarPorGenero($genero);
+        shuffle($genero);
+        return $genero;
     }
 
     public function buscar(string $nome): array {
@@ -25,15 +33,11 @@ class ProdutoService {
         return $this->repo->buscarPorId($id);
     }
 
-    public function listarPorIdade(int $idade): array{
+    public function listarPorIdade(int $idade): array {
         return $this->repo->buscarPorIdade($idade);
     }
 
-    public function listarPorGenero(string $genero): array{
-        return $this->repo->buscarPorGenero($genero);
-    }
-
-    public function listarPorPreco(float $preco): array{
+    public function listarPorPreco(float $preco): array {
         return $this->repo->buscarPorPreco($preco);
     }
 

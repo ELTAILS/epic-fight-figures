@@ -25,7 +25,7 @@ class PagesController {
     }
     
     public function index(): void {
-        $produtos = $this->service->listarDestaques(8);
+        $produtos = $this->service->listarDestaques();
         $this->render('index', ['produtos' => $produtos]);
     }
 

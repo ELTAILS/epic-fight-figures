@@ -54,95 +54,66 @@
         </div>
     </div>
 </section>
-<!--Produtos 1-->
 
-<h2 class="h2 text-center">Novidades que chegaram pra você</h2>
+<!--Produtos -->
 
-<section class="vitrine-container">
-    <button class="vitrine-btn left">
-        <i class="fa-solid fa-chevron-left"></i>
-    </button>
+<h2 class="h2 text-center">📕 Novidades que chegaram pra você</h2>
 
-    <div class="vitrine">
-        <?php foreach ($produtos as $produto): ?>
-            <div class="produto-card m-auto">
-                <img src="assets/img/produtos/<?= $produto['imagem'] ?>" alt="<?= $produto['nome'] ?>">
-                <h5><?= $produto['nome'] ?></h5>
-                <p><?= $produto['descricao'] ?></p>
-                <span class="preco">R$ <?= number_format($produto['preco'], 2, ',', '.') ?></span>
-                <div class="btn-produto"><a href="?url=produto&id=<?= $produto['id'] ?>">Comprar</a></div>
+<?php
+$vitrines = array_chunk($produtos, 8);
+?>
+
+<?php foreach ($vitrines as $index => $bloco): ?>
+<?php if($index === 4) break;?>
+   
+    <!--bloco te texto-->
+
+    <?php if ($index === 2): ?>
+        <section class="promo-container my-5">
+            <div class="promo-card">
+                <div class="promo-img">
+                    <img src="assets/img/rimuru.png" alt="Promoção Mangás">
+                </div>
+                <div class="promo-text">
+                    <h2>⚔️ PROMOÇÃO 4x3 ⚔️</h2>
+                    <p>Leve 4 mangás e pague apenas 3!</p>
+                    <a href="?url=mangas" class="btn-promo">Aproveitar agora</a>
+                </div>
             </div>
-        <?php endforeach; ?>
-    </div>
+        </section>
 
-    <button class="vitrine-btn right">
-        <i class="fa-solid fa-chevron-right"></i>
-    </button>
-</section>
+        <h2 class="h2 text-center">Mais Populares</h2>
 
+    <?php endif; ?>
 
-<!--bloco te texto-->
-<section class="promo-container my-5">
-    <div class="promo-card">
-        <div class="promo-img">
-            <img src="assets/img/rimuru.png" alt="Promoção Mangás">
+    <!-- VITRINE -->
+    <section class="vitrine-container">
+
+        <button class="vitrine-btn left" onclick="scrollVitrine(-1, <?= $index ?>)">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="vitrine" id="vitrine-<?= $index ?>">
+            <?php foreach ($bloco as $produto): ?>
+                <div class="produto-card m-auto">
+                    <img src="assets/img/produtos/<?= $produto['imagem'] ?>" alt="<?= $produto['nome'] ?>">
+                    <h5><?= $produto['nome'] ?></h5>
+                    <p><?= $produto['descricao'] ?></p>
+                    <span class="preco">R$ <?= number_format($produto['preco'], 2, ',', '.') ?></span>
+                    <div class="btn-produto">
+                        <a href="?url=produto&id=<?= $produto['id'] ?>">Comprar</a>
+                    </div>
+                </div>
+            <?php endforeach; ?>
         </div>
-        <div class="promo-text">
-            <h2>⚔️ PROMOÇÃO 4x3 ⚔️</h2>
-            <p>Leve <strong>4 mangás</strong> e pague apenas <strong>3</strong>!  
-            A chance perfeita para completar sua coleção ou começar uma nova aventura sem pesar no bolso.</p>
-            <a href="?url=mangas" class="btn-promo">Aproveitar agora</a>
-        </div>
-    </div>
-</section>
 
-<!--Produtos 2-->
-<h2 class="h2 text-center">Mais Populares</h2>
+        <button class="vitrine-btn right" onclick="scrollVitrine(1, <?= $index ?>)">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
 
-<section class="vitrine-container">
-    <button class="vitrine-btn left">
-        <i class="fa-solid fa-chevron-left"></i>
-    </button>
+    </section>
 
-    <div class="vitrine">
-        <?php foreach ($produtos as $produto): ?>
-            <div class="produto-card m-auto">
-                <img src="assets/img/produtos/<?= $produto['imagem'] ?>" alt="<?= $produto['nome'] ?>">
-                <h5><?= $produto['nome'] ?></h5>
-                <p><?= $produto['descricao'] ?></p>
-                <span class="preco">R$ <?= number_format($produto['preco'], 2, ',', '.') ?></span>
-                <div class="btn-produto"><a href="?url=produto&id=<?= $produto['id'] ?>">Comprar</a></div>
-            </div>
-        <?php endforeach; ?>
-    </div>
-
-    <button class="vitrine-btn right">
-        <i class="fa-solid fa-chevron-right"></i>
-    </button>
-</section>
-
-<!--Produtos 3-->
-<section class="vitrine-container">
-    <button class="vitrine-btn left">
-        <i class="fa-solid fa-chevron-left"></i>
-    </button>
-
-    <div class="vitrine">
-        <?php foreach ($produtos as $produto): ?>
-            <div class="produto-card m-auto">
-                <img src="assets/img/produtos/<?= $produto['imagem'] ?>" alt="<?= $produto['nome'] ?>">
-                <h5><?= $produto['nome'] ?></h5>
-                <p><?= $produto['descricao'] ?></p>
-                <span class="preco">R$ <?= number_format($produto['preco'], 2, ',', '.') ?></span>
-                <div class="btn-produto"><a href="?url=produto&id=<?= $produto['id'] ?>">Comprar</a></div>
-            </div>
-        <?php endforeach; ?>
-    </div>
-
-    <button class="vitrine-btn right">
-        <i class="fa-solid fa-chevron-right"></i>
-    </button>
-</section>
+<?php endforeach; ?>
 
 <!--Sobre o site e termos legais-->
 <section class="termos-legais container my-5">
