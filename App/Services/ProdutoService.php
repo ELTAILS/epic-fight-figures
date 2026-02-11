@@ -25,4 +25,16 @@ class ProdutoService {
         return $this->repo->buscarPorId($id);
     }
 
+    public function listarPorIdade(int $idade): array{
+        return $this->repo->buscarPorIdade($idade);
+    }
+
+    public function listarPorGenero(string $genero): array{
+        return $this->repo->buscarPorGenero($genero);
+    }
+
+    public function listarPorPreco(float $preco): array{
+        return $this->repo->buscarPorPreco($preco);
+    }
+
 }

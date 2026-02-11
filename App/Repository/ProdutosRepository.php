@@ -39,6 +39,30 @@ class ProdutosRepository {
         return $produto ?: null;
     }
 
+    public function buscarPorGenero(string $genero): array {
+        $sql = "SELECT * FROM produtos WHERE genero = :g";
+        $stmt = $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':g',$genero);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+    public function buscarPorIdade(int $idade): array{
+        $sql = "SELECT * FROM produtos WHERE idade_recomendada = :i";
+        $stmt = $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':i',$idade);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+    public function buscarPorPreco(float $preco): array{
+        $sql = "SELECT * FROM produtos WHERE preco = :p";
+        $stmt = $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':p',$preco);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
     //criar,excluir e editar vai ser criado quando fazer a pagina ADM
 
 }

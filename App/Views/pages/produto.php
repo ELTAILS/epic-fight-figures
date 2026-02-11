@@ -39,7 +39,7 @@
     </div>
 </section>
 <!--Detalhes do produto-->
-<section class="ficha-tecnica container" style="margin-top: 2rem;">
+<section class="ficha-tecnica container" style="margin-top: 2rem; margin-bottom: 2rem;">
     <div class="accordion accordion-flush" id="accordionFlushExample">
         <div class="accordion-item">
             <h2 class="accordion-header">
@@ -53,6 +53,8 @@
                         <li class="list-group-item">Nome: <?= $produto['nome'] ?></li>
                         <li class="list-group-item">Tipo: <?= $produto['categoria'] ?></li>
                         <li class="list-group-item">Preço: R$ <?= number_format($produto['preco'], 2, ',', '.') ?></li>
+                        <li class="list-group-item">Idade recomendada: <?= $produto['idade_recomendada'] ?></li>
+                        <li class="list-group-item">Genero: <?= $produto['genero'] ?></li>
                         <li class="list-group-item">Sabemos que você busca o melhor que cabe no seu bolso. Por isso, trabalhamos apenas com materiais premium e rigorosos testes de excelência. Qualidade garantida em cada entrega!</li>
                     </ul>
                 </div>

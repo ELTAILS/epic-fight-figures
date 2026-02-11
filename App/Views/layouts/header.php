@@ -47,37 +47,51 @@
         <!--NavBar--> 
         <hr>
         <nav>
-            <ul class="nav justify-content-center">
+            <ul class="nav justify-content-center flex-wrap gap-2">
+
                 <li class="nav-item">
-                    <a class="nav-link" href="?url=mangas">Todas as categorias</a>
+                    <a class="nav-link" href="?url=mangas">
+                        <i class="fa-solid fa-book-open"></i> Todos os Mangás
+                    </a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Shonen</a>
+                    <a class="nav-link" href="?url=buscar&genero=Ação">
+                        <i class="fa-solid fa-bolt"></i> Ação
+                    </a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Isekai</a>
+                    <a class="nav-link" href="?url=buscar&genero=Aventura">
+                        <i class="fa-solid fa-compass"></i> Aventura
+                    </a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Romance</a>
+                    <a class="nav-link" href="?url=buscar&genero=Fantasia">
+                        <i class="fa-solid fa-dragon"></i> Fantasia
+                    </a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Comédia</a>
+                    <a class="nav-link" href="?url=buscar&genero=Suspense">
+                        <i class="fa-solid fa-user-secret"></i> Suspense
+                    </a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Fantasia</a>
+                    <a class="nav-link" href="?url=buscar&genero=Terror">
+                        <i class="fa-solid fa-ghost"></i> Terror
+                    </a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mecha</a>
+                    <a class="nav-link" href="?url=actionFigures">
+                        <i class="fa-solid fa-puzzle-piece"></i> Action Figures
+                    </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Slice of Life</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="?url=actionFigures">action figures</a>
-                </li>
+
             </ul>
         </nav>
-
     </header>
-
     <main>

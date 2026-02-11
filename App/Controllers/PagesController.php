@@ -34,12 +34,12 @@ class PagesController {
     }
     
     public function mangas(): void {
-        $produtos = $this->service->listarPorCategoria('mangas');
+        $produtos = $this->service->listarPorCategoria('manga');
         $this->render('mangas', ['produtos' => $produtos]);
     }
 
     public function actionFigures(): void {
-        $produtos = $this->service->listarPorCategoria('actionFigures');
+        $produtos = $this->service->listarPorCategoria('Action Figure');
         $this->render('actionFigures', ['produtos' => $produtos]);
     }
 
@@ -52,7 +52,15 @@ class PagesController {
     }
 
     public function buscar(): void {
-        $nome = $_GET['busca'] ?? '';
+        $nome = $_GET['busca'] ?? null;
+        $genero = $_GET['genero'] ?? null;
+
+        if($genero){
+            $produtos = $this->service->listarPorGenero($genero);
+            $this->render('buscar',['produtos' => $produtos]);
+            return;
+        }
+
         $produtos = $this->service->buscar($nome);
         $this->render('buscar',['produtos' => $produtos]);
     }
