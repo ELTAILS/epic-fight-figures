@@ -52,17 +52,24 @@ class PagesController {
     }
 
     public function buscar(): void {
-        $nome = $_GET['busca'] ?? null;
-        $genero = $_GET['genero'] ?? null;
 
-        if($genero){
-            $produtos = $this->service->listarPorGenero($genero);
-            $this->render('buscar',['produtos' => $produtos]);
+        $nome = $_GET['busca'] ?? null;
+
+        if(isset($nome)){
+            $produtos = $this->service->buscar($nome);
+            $this->render('buscar', ['produtos' => $produtos]);
             return;
         }
 
-        $produtos = $this->service->buscar($nome);
-        $this->render('buscar',['produtos' => $produtos]);
+        $dados = [
+            'genero' => $_GET['genero'] ?? null,
+            'min' => $_GET['min'] ?? null,
+            'max' => $_GET['max'] ?? null,
+            'idade' => $_GET['idade'] ?? null
+        ];
+
+        $produtos = $this->service->produtoFilter($dados);
+        $this->render('buscar', ['produtos' => $produtos]);
     }
 
     public function buscarPorId(): void {

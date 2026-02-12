@@ -19,12 +19,6 @@ class ProdutoService {
         return $categoria;
     }
 
-    public function listarPorGenero(string $genero): array {
-        $genero = $this->repo->buscarPorGenero($genero);
-        shuffle($genero);
-        return $genero;
-    }
-
     public function buscar(string $nome): array {
         return $this->repo->buscarPorNome($nome);
     }
@@ -33,12 +27,16 @@ class ProdutoService {
         return $this->repo->buscarPorId($id);
     }
 
-    public function listarPorIdade(int $idade): array {
-        return $this->repo->buscarPorIdade($idade);
-    }
+    // public function produtoFilter(string $genero, float $min, float $max, int $idade): ?array {
+    //     return $this->repo->buscarFilter($genero,$min,$max,$idade);
+    // }
 
-    public function listarPorPreco(float $preco): array {
-        return $this->repo->buscarPorPreco($preco);
-    }
+    public function produtoFilter(array $dados): array {
+        $genero = trim($dados['genero'] ?? '') ?: null;
+        $min    = isset($dados['min']) && $dados['min'] !== '' ? (float)$dados['min'] : null;
+        $max    = isset($dados['max']) && $dados['max'] !== '' ? (float)$dados['max'] : null;
+        $idade  = isset($dados['idade']) && $dados['idade'] !== '' ? (int)$dados['idade'] : null;
 
+        return $this->repo->buscarFilter($genero, $min, $max, $idade);
+    }
 }
