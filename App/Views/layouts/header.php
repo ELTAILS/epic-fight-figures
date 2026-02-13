@@ -38,7 +38,7 @@
                     <div class="col-4">
                         <nav class="nav">
                             <a class="nav-link" href="#"><i class="fa-solid fa-circle-user"></i><strong><!--Mostrar o nome da conta-->User</strong></a>
-                            <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i><strong>Carrinho</strong></a>
+                            <a class="nav-link" href="?url=carrinho"><i class="fa-solid fa-cart-shopping"></i><strong>Carrinho</strong></a>
                         </nav>
                     </div>
                 </div>

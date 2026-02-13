@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\CarrinhoController;
 use App\Controllers\PagesController;
 
 //chama todos os pacotes
@@ -10,7 +11,7 @@ $url = $_GET['url'] ?? '/';
 
 //Chama o controller
 $controllerPages = new PagesController;
-
+$controllerCarrinho = new CarrinhoController;
 //Escolhe a pagina baseado na URL
 switch($url){
     case '/':
@@ -33,6 +34,9 @@ switch($url){
         break;
     case 'produto':
         $controllerPages->buscarPorId();
+        break;
+    case 'carrinho':
+        $controllerCarrinho->carrinhoPage();
         break;
     default:
         $controllerPages->erro(); // Pagina de erro
