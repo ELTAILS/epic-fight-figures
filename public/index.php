@@ -43,6 +43,9 @@ switch($url){
     case 'registro':
         $controllerUsuario->registroPage();
         break;
+    case 'registro-salvar':
+        $controllerUsuario->registroUsuario();
+        break;
     case 'login':
         $controllerUsuario->loginPage();
         break;

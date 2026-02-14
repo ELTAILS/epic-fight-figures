@@ -11,13 +11,13 @@
             </div>
 
             <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                <form>
+                <form method="POST" id="form">
                     <!--Nome-->
                     <div data-mdb-input-init class="form-outline mb-4">
                         <div class="input-group mb-3">
                             <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Seu Nome" require>
+                                <input type="text" name="nome" id="nome" class="form-control" placeholder="Seu Nome" required>
                                 <label for="floatingInputGroup1">Seu Nome</label>
                             </div>
                         </div>
@@ -27,7 +27,7 @@
                         <div class="input-group mb-3">
                         <span class="input-group-text"><i class="fa-regular fa-envelope"></i></span>
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="floatingInputGroup1" placeholder="Seu email" require>
+                                <input type="email" class="form-control" id="email" placeholder="Seu email" required>
                                 <label for="floatingInputGroup1">Seu email</label>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                         <div class="input-group mb-3">
                             <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
                             <div class="form-floating">
-                                <input type="password" class="form-control" id="floatingInputGroup1" placeholder="Sua senha" require minlength="6">
+                                <input type="password" class="form-control" id="senha" placeholder="Sua senha" required minlength="6">
                                 <label for="floatingInputGroup1">Sua senha</label>
                             </div>
                         </div>
@@ -65,3 +65,5 @@
         </div>
     </div>
 </section>
+
+<script src="assets/js/api/enviar.js"></script>
