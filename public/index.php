@@ -2,6 +2,7 @@
 
 use App\Controllers\CarrinhoController;
 use App\Controllers\PagesController;
+use App\Controllers\UsuarioControllers;
 
 //chama todos os pacotes
 require_once __DIR__ . "/../vendor/autoload.php";
@@ -12,22 +13,23 @@ $url = $_GET['url'] ?? '/';
 //Chama o controller
 $controllerPages = new PagesController;
 $controllerCarrinho = new CarrinhoController;
+$controllerUsuario = new UsuarioControllers;
 //Escolhe a pagina baseado na URL
 switch($url){
     case '/':
-        $controllerPages->index(); // Home do site
+        $controllerPages->index();
         break;
     case 'mangas':
-        $controllerPages->mangas(); // parte de vendas de mángas
+        $controllerPages->mangas();
         break;
     case 'actionFigures':
-        $controllerPages->actionFigures(); //parte de vendas de Action Figures
+        $controllerPages->actionFigures();
         break;
     case 'sobreMim':
-        $controllerPages->sobreMim(); // sobre mim e meu curriculo
+        $controllerPages->sobreMim();
         break;
     case 'legal':
-        $controllerPages->legal(); // sobre a parte legal do site
+        $controllerPages->legal();
         break;
     case 'buscar':
         $controllerPages->buscar();
@@ -37,6 +39,12 @@ switch($url){
         break;
     case 'carrinho':
         $controllerCarrinho->carrinhoPage();
+        break;
+    case 'registro':
+        $controllerUsuario->registroPage();
+        break;
+    case 'login':
+        $controllerUsuario->loginPage();
         break;
     default:
         $controllerPages->erro(); // Pagina de erro

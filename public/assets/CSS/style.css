@@ -593,3 +593,60 @@ section h1 {
 form {
     display: block;
 }
+
+/* login */
+
+.divider:after, .divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+.hr-ou {
+    background-color: var(--cor-segundaria);
+    width: 100%;
+}
+
+.login-redes {
+    width: 100%;
+}
+
+.login-redes .google {
+    width: 100%;
+    color: white;
+    background-color: #3C4043;
+    margin-bottom: 1rem;
+    border: none;
+    transition: ease-in-out 0.35s;
+}
+
+.login-redes .google:hover {
+    transform: scale(1.05);
+    background-color: #757575;
+}
+
+.login-redes .instagram {
+    width: 100%;
+    color: white;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    margin-bottom: 1rem;
+    border: none;
+    transition: ease-in-out 0.35s;    
+}
+
+.login-redes .instagram:hover {
+    transform: scale(1.05);
+}
+
+.login-submit {
+    transition: ease-in-out 0.35s;
+}
+
+.login-submit:hover {
+    transform: scale(1.05);
+}
+
+.login-redes .instagram:active, .login-redes .google:active , .login-submit:active{
+    transform: scale(0.95);
+}
