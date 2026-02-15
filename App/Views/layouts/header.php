@@ -37,8 +37,37 @@
                     <!--Login e carrinho-->
                     <div class="col-4">
                         <nav class="nav">
-                            <a class="nav-link" href="?url=login"><i class="fa-solid fa-circle-user"></i><strong><!--Mostrar o nome da conta-->User</strong></a>
-                            <a class="nav-link" href="?url=carrinho"><i class="fa-solid fa-cart-shopping"></i><strong>Carrinho</strong></a>
+                        <?php if(isset($_SESSION['usuario_id'])): ?>
+                            <!-- Usuário logado -->
+                            <div class="dropdown">
+                                <a class="nav-link dropdown-toggle d-flex align-items-center gap-1" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-circle-user"></i>
+                                <strong><?= substr(htmlspecialchars ($_SESSION['usuario_nome']), 0 , 10) ?></strong>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="?url=deslogar">Deslogar</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Carrinho logado -->
+                            <a class="nav-link d-flex align-items-center gap-1" href="?url=carrinho">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <strong>Carrinho</strong>
+                            </a>
+                        <?php else: ?>
+                            <!-- Visitante -->
+                            <a class="nav-link d-flex align-items-center gap-1" href="?url=login">
+                                <i class="fa-solid fa-circle-user"></i>
+                                <strong>Visitante</strong>
+                            </a>
+                            <!-- Carrinho visitante -->
+                            <a class="nav-link d-flex align-items-center gap-1" href="?url=login">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <strong>Carrinho</strong>
+                            </a>
+                        <?php endif; ?>
                         </nav>
                     </div>
                 </div>

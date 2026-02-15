@@ -24,7 +24,7 @@ class UsuarioRepository {
         return $stmt->fetch() ?: false;
     }
     //Buscar o nome do usuario para mostrar no header
-    public function buscarNome(int $id): string {
+    public function buscarNome(int $id): ?array {
         $sql = "SELECT nome FROM usuarios WHERE id = :id";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindValue(':id',$id);
@@ -32,11 +32,26 @@ class UsuarioRepository {
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     //Login
-    public function usuarioLogin(string $senha, string $email): ?array {
-        $sql = "SELECT * FROM usuarios WHERE senha = :s AND email = :e";
+    public function usuarioLogin(string $email): ?array {
+        $sql = "SELECT id, nome, senha FROM usuarios WHERE email = :e";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(':s',$senha);
         $stmt->bindValue(':e',$email);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC) ?: null;
+    }
+    //senha
+    public function senhaHashUsuario(string $email): ?string {
+        $sql = "SELECT senha FROM usuairios WHERE email = :e";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':e',$email);
+        $stmt->execute();
+        return $resultado['senha'] ?? null;
+    }
+    //buscar email
+    public function buscarUsuarioPorEmail(string $email): ?array {
+        $sql = "SELECT id, nome, senha FROM usuarios WHERE email = :email";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindValue(':email', $email);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC) ?: null;
     }

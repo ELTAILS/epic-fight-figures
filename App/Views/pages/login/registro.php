@@ -66,4 +66,4 @@
     </div>
 </section>
 
-<script src="assets/js/api/enviar.js"></script>
+<script src="assets/js/api/enviarRegistro.js"></script>

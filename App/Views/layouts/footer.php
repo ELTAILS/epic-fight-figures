@@ -15,6 +15,7 @@
                     <ul class="list-unstyled pt-2 footer-menu">
                         <li class="py-1"><a href="?url=sobreMim">Sobre mim</a></li>
                         <li class="py-1"><a href="?url=legal">LEGAL</a></li>
+                        <li class="py-1"><a href="?url=/">HOME</a></li>
                     </ul>
                 </div>
                 <div class="col">

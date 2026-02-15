@@ -48,4 +48,30 @@ class UsuarioControllers {
         }
     }
 
+    public function loginUsuario(): void {
+        
+        if($_SERVER['REQUEST_METHOD'] !== 'POST'){
+            Response::jsonResponse(405,false,null,'Método invalido!');
+        }
+
+        $dados = json_decode(file_get_contents("php://input"), true);
+
+        try {
+            $this->service->usuarioLogin($dados);
+            Response::jsonResponse(201,true,'Usuario logado com sucesso!');
+        } catch (Exception $e) {
+            Response::jsonResponse(500,false,null,'Erro interno: ' . $e->getMessage());
+        }
+
+    }
+
+    public function deslogarUsuario(): void {
+        session_start();
+        $_SESSION = array();
+        session_destroy();
+
+        header("Location: ?url=/");
+        exit;
+    }
+
 }

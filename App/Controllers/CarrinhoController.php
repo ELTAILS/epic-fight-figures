@@ -26,6 +26,11 @@ class CarrinhoController {
 
     public function carrinhoPage(): void {
 
+        if(!isset($_SESSION['usuario_id'])){
+            header("Location: ?url=login");
+            exit;
+        }
+
         $usuario_id = $this->getUsuarioId();
 
         $carrinho = $this->service->buscarCarrinhoAtivoPorUsuario($usuario_id);
