@@ -46,7 +46,6 @@ class UsuarioService {
             throw new InvalidArgumentException('Senha incorreta!');
         }
 
-        session_start();
         $_SESSION['usuario_id'] = $usuario['id'];
         $_SESSION['usuario_nome'] = $usuario['nome'];
 
