@@ -8,7 +8,7 @@ use InvalidArgumentException;
 class UsuarioService {
     public function __construct(private UsuarioRepository $repo){}
 
-    public function UsuarioCriado(array $dados): void {
+    public function UsuarioCriado(array $dados): array {
         $nome = trim($dados['nome'] ?? '');
         $senha = trim($dados['senha'] ?? '');
         $email = filter_var($dados['email'] ?? null, FILTER_VALIDATE_EMAIL);
@@ -24,6 +24,10 @@ class UsuarioService {
         $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
         $this->repo->criarConta($nome,$email,$senha_hash);
+
+        $usuario = $this->repo->buscarUsuarioPorEmail($email);
+
+        return $usuario;
 
     }
 

@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="text-center mb-4">
-                        <a href="?url=registro">Ainda não tem cadastro?</a>
+                        <a href="registro">Ainda não tem cadastro?</a>
                     </div>
                     <!-- Botão de enviar -->
                     <div class="text-center">

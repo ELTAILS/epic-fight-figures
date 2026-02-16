@@ -26,7 +26,7 @@
     </button>
 </div>
 <!--Broquinho de anuncios-->
-<section class="vantagens container my-5">
+<section class="vantagens container-fluid my-5 px-3">
     <div class="row text-center gy-4">
         <div class="col-6 col-md-3">
             <div class="vantagem-item">

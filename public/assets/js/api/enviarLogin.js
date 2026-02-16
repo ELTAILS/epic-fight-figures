@@ -16,7 +16,6 @@ document.getElementById('form').addEventListener('submit', function(e) {
         })
     }).then(response => response.json())
     .then(data => {
-        alert('Login realizado com sucesso!');
         window.location.href = url;
     })
     .catch(erro => {

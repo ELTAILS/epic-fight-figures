@@ -52,7 +52,7 @@
                     </div>
 
                     <div class="text-center mb-4 mt-3">
-                        <a href="?url=login">Já é usuário? Entrar</a>
+                        <a href="login">Já é usuário? Entrar</a>
                     </div>
 
                     <!-- Botão de enviar -->

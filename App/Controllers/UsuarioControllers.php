@@ -41,7 +41,9 @@ class UsuarioControllers {
         $dados = json_decode(file_get_contents("php://input"), true);
 
         try {
-            $this->service->UsuarioCriado($dados);
+            $usuario = $this->service->UsuarioCriado($dados);
+            $_SESSION['usuario_id'] = $usuario['id'];
+            $_SESSION['usuario_nome'] = $usuario['nome'];
             Response::jsonResponse(201,true,'Usuario cadastrado com sucesso!');
         } catch (Exception $e) {
             Response::jsonResponse(500,false,null,'Erro interno: ' . $e->getMessage());

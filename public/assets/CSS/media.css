@@ -6,6 +6,11 @@
         display: none;
     }
 
+    .sidebar-filtros{
+        position: relative;
+        margin-bottom: 2.5rem;
+    }
+
     header .d-flex {
         flex-direction: column;
         gap: 10px;
