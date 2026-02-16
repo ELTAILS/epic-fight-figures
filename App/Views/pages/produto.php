@@ -19,14 +19,23 @@
                     <p class="produto-preco">
                         R$ <?= number_format($produto['preco'], 2, ',', '.') ?>
                     </p>
-                    <label class="fw-bold">Quantidade</label>
-                    <select class="form-select mb-3" id="quantidade">
-                        <?php for($i=1;$i<=9;$i++): ?>
-                            <option value="<?= $i ?>"><?= $i ?></option>
-                        <?php endfor; ?>
-                    </select>
-                    <button class="btn btn-comprar w-100 mb-2" id="comprar-produto">Comprar</button>
-                    <button class="btn btn-carrinho w-100">Adicionar ao Carrinho</button>
+                    <form method="GET" action="<?= BASE_URL ?>carrinho/adicionar">
+                        <label class="fw-bold">Quantidade</label>
+                        <input type="hidden" name="produto" value="<?= $produto['id'] ?>">
+                        <select class="form-select mb-3" id="quantidade" name="qtd">
+                            <?php for($i=1;$i<=9;$i++): ?>
+                                <option value="<?= $i ?>"><?= $i ?></option>
+                            <?php endfor; ?>
+                        </select>
+                        <!-- BOTÃO COMPRAR (mantido, você implementa depois) -->
+                        <button type="button" class="btn btn-comprar w-100 mb-2" id="comprar-produto">
+                            Comprar
+                        </button>
+                        <!-- BOTÃO CARRINHO corrigido -->
+                        <button type="submit" class="btn btn-carrinho w-100">
+                            Adicionar ao Carrinho
+                        </button>
+                    </form>
                     <hr>
                     <p class="fw-bold">Calcular Frete</p>
                     <form class="frete-box">

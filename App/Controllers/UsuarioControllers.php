@@ -71,7 +71,7 @@ class UsuarioControllers {
         session_destroy();
         $home = BASE_URL;
 
-        header("Location: $home");
+        header("Location: " . BASE_URL);
         exit;
     }
 

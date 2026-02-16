@@ -61,6 +61,17 @@ switch($url){
     case 'deslogar':
         $controllerUsuario->deslogarUsuario();
         break;
+
+    case 'carrinho/adicionar':
+        $controllerCarrinho->adicionar();
+        break;
+    case 'carrinho/remover':
+        $controllerCarrinho->remover();
+        break;
+    case 'carrinho/finalizar':
+        $controllerCarrinho->finalizar();
+        break;
+        
     default:
         $controllerPages->erro(); // Pagina de erro
         break;

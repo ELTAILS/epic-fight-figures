@@ -1,3 +1,9 @@
+<?php if(isset($_SESSION['sucesso'])): ?>
+    <div class="alert alert-success text-center">
+        <?= $_SESSION['sucesso']; unset($_SESSION['sucesso']); ?>
+    </div>
+<?php endif; ?>
+
 <div class="container mt-4">
     <h2 class="text-center mb-4">Seu carrinho de compras 🛒🛍️</h2>
     <!-- Tabela de produtos -->
@@ -13,21 +19,35 @@
                     <th>Excluir</th>
                 </tr>
             </thead>
-            <tbody>
-                <!-- Exemplo de item -->
-                <tr>
-                    <td>1</td>
-                    <td>Action Figure Touka Kirishima</td>
-                    <td>R$ 139,90</td>
-                    <td>2</td>
-                    <td>R$ 279,80</td>
-                    <td>
-                        <a href="#" class="text-danger">
-                            <i class="fa-solid fa-trash"></i>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
+                <tbody>
+                    <?php $total = 0 ?>
+                    
+                    <?php if(empty($itens)): ?>
+                        <tr>
+                            <td colspan="6">
+                            Seu carrinho está vazio
+                            </td>
+                        </tr>
+                    <?php else:
+                        $total = 0;
+                        foreach($itens as $index => $item):
+                        $total += $item['subtotal'];
+
+                    ?>
+                        <tr>
+                            <td><?= $index + 1 ?></td>
+                            <td><?= htmlspecialchars($item['nome']) ?></td>
+                            <td>R$ <?= number_format($item['preco_unitario'],2,',','.') ?></td>
+                            <td><?= $item['quantidade'] ?></td>
+                            <td>R$ <?= number_format($item['subtotal'],2,',','.') ?></td>
+                            <td>
+                            <a href="carrinho/remover?produto=<?= $item['produto_id'] ?>">
+                            Excluir
+                            </a>
+                            </td>
+                        </tr>
+                    <?php endforeach; endif; ?>
+                </tbody>
         </table>
     </div>
     <!-- Resumo do carrinho -->
@@ -36,11 +56,13 @@
             <div class="card shadow-sm">
                 <div class="card-body text-center">
                     <h5 class="card-title">Resumo do pedido</h5>
-                    <p class="mb-1">Subtotal: <strong>R$ 279,80</strong></p>
+                    <p class="mb-1">Subtotal: <strong>R$<?= number_format($total, 2 , ",",".") ?></strong></p>
                     <p class="text-success">Frete grátis</p>
                     <hr>
-                    <h5>Total: <strong>R$ 279,80</strong></h5>
-                    <a href="#" class="btn btn-primary w-100 mt-3">Finalizar Compra</a>
+                    <h5>Total: <strong>R$<?= number_format($total, 2 , ",",".") ?></strong></h5>
+                    <a href="<?= BASE_URL ?>carrinho/finalizar" class="btn btn-primary w-100 mt-3">
+                        Finalizar Compra
+                    </a>
                 </div>
             </div>
         </div>

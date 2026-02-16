@@ -18,16 +18,15 @@ class CarrinhoController {
         $this->service = new CarrinhoService($repo, $repoProduto);
     }
 
-    // 🔐 Simulação de usuário logado (até implementar login)
     private function getUsuarioId(): int {
-        // Futuramente será: return $_SESSION['usuario_id'];
-        return 1; // Usuário fixo para testes
+        return $_SESSION['usuario_id'];
     }
+
 
     public function carrinhoPage(): void {
 
         if(!isset($_SESSION['usuario_id'])){
-            header("Location: login");
+            header("Location: " . BASE_URL . "login");
             exit;
         }
 
@@ -54,18 +53,34 @@ class CarrinhoController {
 
         $this->service->adicionarProduto($usuario_id, $produto_id, $quantidade);
 
-        header("Location: carrinho");
+        header("Location: " . BASE_URL . "carrinho");
         exit;
     }
 
     public function remover(): void {
-
         $usuario_id = $this->getUsuarioId();
         $produto_id = (int) ($_GET['produto'] ?? 0);
-
-        $this->service->removerProduto($usuario_id, $produto_id);
-
-        header("Location: carrinho");
+        $carrinho = $this->service->buscarCarrinhoAtivoPorUsuario($usuario_id);
+        if($carrinho){
+            $this->service->removerProduto($carrinho['id'], $produto_id);
+        }
+        header("Location: " . BASE_URL . "carrinho");
         exit;
     }
+
+    public function finalizar(): void {
+        if(!isset($_SESSION['usuario_id'])){
+            header("Location: " . BASE_URL . "login");
+            exit;
+        }
+
+        $usuario_id = $_SESSION['usuario_id'];
+        $this->service->finalizarCarrinho($usuario_id);
+        // mensagem temporária
+        $_SESSION['sucesso'] = "Obrigado por comprar conosco! 🎉";
+        header("Location: " . BASE_URL . "carrinho");
+        exit;
+    }
+
+
 }

@@ -69,4 +69,11 @@ class CarrinhoService {
         return $this->repo->listarItensDoCarrinho($carrinho_id);
     }
 
+    public function finalizarCarrinho(int $usuario_id): void {
+        $carrinho = $this->repo->buscarCarrinhoAtivoPorUsuario($usuario_id);
+        if (!$carrinho) {
+            return;
+        }
+        $this->repo->finalizarCarrinho($carrinho['id']);
+    }
 }
