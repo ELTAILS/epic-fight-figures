@@ -3,8 +3,9 @@ document.getElementById('form').addEventListener('submit', function(e) {
 
     const email = document.getElementById('email').value;
     const senha = document.getElementById('senha').value;
+    const url = '/epic-fight-figures/public/';
     //console.log(email,senha);
-    fetch('?url=usuarioLogar', {
+    fetch('usuarioLogar', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -16,7 +17,7 @@ document.getElementById('form').addEventListener('submit', function(e) {
     }).then(response => response.json())
     .then(data => {
         alert('Login realizado com sucesso!');
-        window.location.href = '?url=/';
+        window.location.href = url;
     })
     .catch(erro => {
         console.error('Erro: ' + erro);

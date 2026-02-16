@@ -21,18 +21,19 @@
         <div class="d-flex p-2">
             <!--Img Logo-->
             <div class="imgLogo">
-                <a href="?url=/"><img src="assets/img/logo.png" alt="Logo do site"></a>
+                <a href="<?= BASE_URL ?>"><img src="assets/img/logo.png" alt="Logo do site"></a>
             </div>
             
             <div class="container text-center teste">
                 <div class="row">
                     <!--Barra de pesquisa-->
                     <div class="col-8">
-                        <form method="get" class="search-bar">
-                            <input type="hidden" name="url" value="buscar">
-                            <input type="search" name="busca" id="busca" placeholder="O que procura?">
-                            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        </form>
+                    <form method="GET" action="<?= BASE_URL ?>buscar" class="search-bar">
+                        <input type="search" name="busca" id="busca" placeholder="O que procura?">
+                        <button type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
                     </div>
                     <!--Login e carrinho-->
                     <div class="col-4">
@@ -47,23 +48,23 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a class="dropdown-item" href="?url=deslogar">Deslogar</a>
+                                        <a class="dropdown-item" href="deslogar">Deslogar</a>
                                     </li>
                                 </ul>
                             </div>
                             <!-- Carrinho logado -->
-                            <a class="nav-link d-flex align-items-center gap-1" href="?url=carrinho">
+                            <a class="nav-link d-flex align-items-center gap-1" href="carrinho">
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 <strong>Carrinho</strong>
                             </a>
                         <?php else: ?>
                             <!-- Visitante -->
-                            <a class="nav-link d-flex align-items-center gap-1" href="?url=login">
+                            <a class="nav-link d-flex align-items-center gap-1" href="login">
                                 <i class="fa-solid fa-circle-user"></i>
                                 <strong>Visitante</strong>
                             </a>
                             <!-- Carrinho visitante -->
-                            <a class="nav-link d-flex align-items-center gap-1" href="?url=login">
+                            <a class="nav-link d-flex align-items-center gap-1" href="login">
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 <strong>Carrinho</strong>
                             </a>
@@ -79,43 +80,43 @@
             <ul class="nav justify-content-center flex-wrap gap-2">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="?url=mangas">
+                    <a class="nav-link" href="<?= BASE_URL ?>mangas">
                         <i class="fa-solid fa-book-open"></i> Todos os Mangás
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="?url=buscar&genero=Ação">
+                    <a class="nav-link" href="<?= BASE_URL ?>buscar?genero=Ação">
                         <i class="fa-solid fa-bolt"></i> Ação
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="?url=buscar&genero=Aventura">
+                    <a class="nav-link" href="<?= BASE_URL ?>buscar?genero=Aventura">
                         <i class="fa-solid fa-compass"></i> Aventura
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="?url=buscar&genero=Fantasia">
+                    <a class="nav-link" href="<?= BASE_URL ?>buscar?genero=Fantasia">
                         <i class="fa-solid fa-dragon"></i> Fantasia
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="?url=buscar&genero=Suspense">
+                    <a class="nav-link" href="<?= BASE_URL ?>buscar?genero=Suspense">
                         <i class="fa-solid fa-user-secret"></i> Suspense
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="?url=buscar&genero=Terror">
+                    <a class="nav-link" href="<?= BASE_URL ?>buscar?genero=Terror">
                         <i class="fa-solid fa-ghost"></i> Terror
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="?url=actionFigures">
+                    <a class="nav-link" href="<?= BASE_URL ?>actionFigures">
                         <i class="fa-solid fa-puzzle-piece"></i> Action Figures
                     </a>
                 </li>

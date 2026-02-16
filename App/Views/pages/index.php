@@ -10,10 +10,10 @@
             <a href="#"><img src="assets/img/carrossel/site.png" class="d-block w-100" alt="imagem carrossel 1"></a>
         </div>
         <div class="carousel-item">
-            <a href="?url=mangas"><img src="assets/img/carrossel/mangas.png" class="d-block w-100" alt="imagem carrossel 2"></a>
+            <a href="mangas"><img src="assets/img/carrossel/mangas.png" class="d-block w-100" alt="imagem carrossel 2"></a>
         </div>
         <div class="carousel-item">
-            <a href="?url=actionFigures"><img src="assets/img/carrossel/actionFigures.png" class="d-block w-100" alt="imagem carrossel 3"></a>
+            <a href="actionFigures"><img src="assets/img/carrossel/actionFigures.png" class="d-block w-100" alt="imagem carrossel 3"></a>
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -101,7 +101,7 @@ $vitrines = array_chunk($produtos, 8);
                     <p><?= $produto['descricao'] ?></p>
                     <span class="preco">R$ <?= number_format($produto['preco'], 2, ',', '.') ?></span>
                     <div class="btn-produto">
-                        <a href="?url=produto&id=<?= $produto['id'] ?>">Comprar</a>
+                        <a href="produto?id=<?= $produto['id'] ?>">Comprar</a>
                     </div>
                 </div>
             <?php endforeach; ?>

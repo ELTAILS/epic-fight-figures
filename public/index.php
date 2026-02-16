@@ -1,4 +1,5 @@
 <?php
+define('BASE_URL', '/epic-fight-figures/public/');
 
 use App\Controllers\CarrinhoController;
 use App\Controllers\PagesController;
@@ -13,6 +14,7 @@ require_once __DIR__ . "/../vendor/autoload.php";
 
 //Pega a Url
 $url = $_GET['url'] ?? '/';
+$url = trim($url, '/');
 
 //Chama o controller
 $controllerPages = new PagesController;
@@ -20,7 +22,7 @@ $controllerCarrinho = new CarrinhoController;
 $controllerUsuario = new UsuarioControllers;
 //Escolhe a pagina baseado na URL
 switch($url){
-    case '/':
+    case '':
         $controllerPages->index();
         break;
     case 'mangas':

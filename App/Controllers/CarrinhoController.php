@@ -27,7 +27,7 @@ class CarrinhoController {
     public function carrinhoPage(): void {
 
         if(!isset($_SESSION['usuario_id'])){
-            header("Location: ?url=login");
+            header("Location: login");
             exit;
         }
 
@@ -54,7 +54,7 @@ class CarrinhoController {
 
         $this->service->adicionarProduto($usuario_id, $produto_id, $quantidade);
 
-        header("Location: ?url=carrinho");
+        header("Location: carrinho");
         exit;
     }
 
@@ -65,7 +65,7 @@ class CarrinhoController {
 
         $this->service->removerProduto($usuario_id, $produto_id);
 
-        header("Location: ?url=carrinho");
+        header("Location: carrinho");
         exit;
     }
 }

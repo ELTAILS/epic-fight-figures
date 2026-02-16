@@ -69,8 +69,9 @@ class UsuarioControllers {
         session_start();
         $_SESSION = array();
         session_destroy();
+        $home = BASE_URL;
 
-        header("Location: ?url=/");
+        header("Location: $home");
         exit;
     }
 

@@ -4,8 +4,9 @@ document.getElementById('form').addEventListener('submit', function(e) {
     const nome = document.getElementById('nome').value;
     const senha = document.getElementById('senha').value;
     const email = document.getElementById('email').value;
+    const url = '/epic-fight-figures/public/';
     // console.log(nome,senha,email);
-    fetch('?url=registro-salvar', {
+    fetch('registro-salvar', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -18,7 +19,7 @@ document.getElementById('form').addEventListener('submit', function(e) {
     }).then(response => response.json())
     .then(data =>{
         alert('Cadastro realizado com sucesso!');
-        window.location.href = '?url=/';
+        window.location.href = url;
     })
     .catch(erro => {
         console.error('Erro: ' + erro);

@@ -31,8 +31,7 @@
         <!-- 🔎 SIDEBAR DE FILTROS -->
         <aside class="col-lg-3 col-md-4 sidebar-filtros">
             
-        <form method="GET" action="">
-            <input type="hidden" name="url" value="buscar">
+        <form method="GET" action="<?= BASE_URL ?>buscar">
 
             <h5 class="titulo-filtro">
                 <i class="fa-solid fa-filter"></i> Filtros
@@ -121,7 +120,7 @@
                             <p><?= $produto['descricao'] ?></p>
                             <span class="preco">R$ <?= number_format($produto['preco'], 2, ',', '.') ?></span>
                             <div class="btn-produto">
-                                <a href="?url=produto&id=<?= $produto['id'] ?>">Comprar</a>
+                                <a href="produto?id=<?= $produto['id'] ?>">Comprar</a>
                             </div>
                         </div>
                     <?php endforeach; ?>
