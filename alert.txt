@@ -1,0 +1,2 @@
+1 - Falta validar a segurança contra ataques
+2 - E quando o usuario adiciona no carrinho sem login da erro, levar para a pagina login em vez disso.

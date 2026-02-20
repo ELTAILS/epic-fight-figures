@@ -54,6 +54,7 @@ class UsuarioControllers {
         
         if($_SERVER['REQUEST_METHOD'] !== 'POST'){
             Response::jsonResponse(405,false,null,'Método invalido!');
+            exit;
         }
 
         $dados = json_decode(file_get_contents("php://input"), true);

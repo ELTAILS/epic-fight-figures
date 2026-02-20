@@ -32,27 +32,30 @@ class UsuarioService {
     }
 
     public function usuarioLogin(array $dados): void {
+        $email = filter_var($dados['email'] ?? '', FILTER_VALIDATE_EMAIL);
+        $senha = $dados['senha'] ?? '';
 
-        $email = filter_var($dados['email'] ?? null, FILTER_VALIDATE_EMAIL);
-        $senha = $dados['senha'] ?? null;
-        
-        if(!$email){
-            throw new InvalidArgumentException('Email inválido!');
+        if(!$email || !$senha){
+            throw new InvalidArgumentException("Email ou senha inválidos");
         }
 
-        $usuario = $this->repo->buscarUsuarioPorEmail($email);
+        $usuario = $this->repo->buscarEmail($email);
 
         if(!$usuario){
-            throw new InvalidArgumentException('Email não encontrado!');
+            throw new InvalidArgumentException("Usuário não encontrado");
         }
 
         if(!password_verify($senha, $usuario['senha'])){
-            throw new InvalidArgumentException('Senha incorreta!');
+            throw new InvalidArgumentException("Senha incorreta");
         }
 
-        $_SESSION['usuario_id'] = $usuario['id'];
-        $_SESSION['usuario_nome'] = $usuario['nome'];
+        $_SESSION['usuario'] = [
 
+            'id' => $usuario['id'],
+            'nome' => $usuario['nome'],
+            'email' => $usuario['email']
+
+        ];
     }
 
 
