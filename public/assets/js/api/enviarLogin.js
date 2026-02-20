@@ -15,11 +15,20 @@ document.getElementById('form').addEventListener('submit', function(e) {
             senha
         })
     }).then(response => response.json())
+    .then(response => {
+        if(!response.ok){
+            throw new Error("Erro HTTP");
+        }
+        return response.json();
+    })
     .then(data => {
-        window.location.href = url;
+        if(data.success){
+            window.location.href = url;
+        }else{
+            alert(data.message);
+        }
     })
     .catch(erro => {
-        console.error('Erro: ' + erro);
-        alert('Ocorreu um erro no login');
-    })
+        alert("Email ou senha inválidos");
+    });
 })

@@ -1,5 +1,8 @@
 <?php
 define('BASE_URL', '/epic-fight-figures/public/');
+header("X-XSS-Protection: 1; mode=block");
+header("X-Content-Type-Options: nosniff");
+header("X-Frame-Options: SAMEORIGIN");
 
 use App\Controllers\CarrinhoController;
 use App\Controllers\PagesController;

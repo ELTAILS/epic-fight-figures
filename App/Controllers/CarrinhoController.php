@@ -19,6 +19,12 @@ class CarrinhoController {
     }
 
     private function getUsuarioId(): int {
+
+        if(!isset($_SESSION['usuario_id'])){
+            header("Location: " . BASE_URL);
+            exit;
+        }
+
         return $_SESSION['usuario_id'];
     }
 
@@ -45,6 +51,11 @@ class CarrinhoController {
     }
 
     public function adicionar(): void {
+
+        if(!isset($_SESSION['usuario_id'])){
+            header("Location: " . BASE_URL . "login");
+            exit;
+        }
 
         $usuario_id = $this->getUsuarioId();
 

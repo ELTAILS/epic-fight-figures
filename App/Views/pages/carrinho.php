@@ -36,7 +36,7 @@
                     ?>
                         <tr>
                             <td><?= $index + 1 ?></td>
-                            <td><?= htmlspecialchars($item['nome']) ?></td>
+                            <td><?= htmlspecialchars($item['nome'], ENT_QUOTES, 'UTF-8') ?></td>
                             <td>R$ <?= number_format($item['preco_unitario'],2,',','.') ?></td>
                             <td><?= $item['quantidade'] ?></td>
                             <td>R$ <?= number_format($item['subtotal'],2,',','.') ?></td>

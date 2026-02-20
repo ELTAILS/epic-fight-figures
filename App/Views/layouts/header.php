@@ -44,7 +44,7 @@
                                 <a class="nav-link dropdown-toggle d-flex align-items-center gap-1" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-circle-user"></i>
-                                <strong><?= substr(htmlspecialchars ($_SESSION['usuario_nome']), 0 , 10) ?></strong>
+                                <strong><?= substr(htmlspecialchars($_SESSION['usuario_nome'], ENT_QUOTES, 'UTF-8'), 0 , 10) ?></strong>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>

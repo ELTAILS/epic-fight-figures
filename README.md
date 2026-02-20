@@ -1,104 +1,193 @@
-🎌 Epic Fight Figures
+# 🚀 Release v1.0.0 — Epic Fight Figures
 
-Epic Fight Figures é um e-commerce fictício desenvolvido para fins educacionais e de portfólio, com foco em demonstrar habilidades Full Stack com PHP, arquitetura MVC e integração com banco de dados.
+Data de lançamento: 20/02/2026
+Autor: Wagner Junior
 
-O projeto simula uma loja geek especializada em Mangás e Action Figures, aplicando conceitos reais de desenvolvimento web usados no mercado.
+---
 
-🚀 Objetivo do Projeto
+# 📦 Sobre o projeto
 
-Este sistema foi criado para:
+Epic Fight Figures é um sistema web completo de e-commerce focado em action figures e mangás, desenvolvido com arquitetura MVC em PHP puro, utilizando boas práticas modernas de segurança, organização e responsividade.
 
-Praticar arquitetura MVC na prática
+Este projeto foi criado com foco em portfólio profissional, demonstrando habilidades full-stack.
 
-Trabalhar com PHP puro orientado a boas práticas
+---
 
-Aplicar PDO + MySQL
+# 🧠 Tecnologias utilizadas
 
-Implementar separação de responsabilidades (Controller, Service, Repository)
+Backend:
 
-Simular um fluxo real de e-commerce
+* PHP 8+
+* PDO (Prepared Statements)
+* Arquitetura MVC
+* API REST
+* JSON
 
-⚠️ Projeto sem fins comerciais — apenas educacional.
+Frontend:
 
-🛠️ Tecnologias Utilizadas
+* HTML5
+* CSS3
+* Bootstrap 5
+* JavaScript (Fetch API)
 
-Back-end
+Banco de dados:
 
-PHP 8+
+* MySQL
 
-MySQL
+---
 
-PDO
+# 🔐 Segurança implementada
 
-Front-end
+✔ Password hashing (password_hash)
 
-HTML5
+✔ Password verify
 
-CSS3
+✔ Proteção contra SQL Injection
 
-Bootstrap 5
+✔ Proteção contra XSS
 
-Font Awesome
+✔ Session segura
 
-Arquitetura
+✔ Session regenerate id
 
-MVC (Model – View – Controller)
+✔ Headers de segurança:
 
-Front Controller (public/index.php)
+* X-XSS-Protection
+* X-Content-Type-Options
+* X-Frame-Options
 
-Camada de Services (regras de negócio)
+✔ Proteção contra acesso direto a arquivos
 
-Camada de Repository (acesso ao banco)
+---
 
-🔐 Funcionalidades do Sistema
-👤 Usuário
+# 👤 Sistema de usuário
 
-Cadastro de conta
+Funcionalidades:
 
-Login com senha criptografada
+✔ Registro
 
-Carrinho individual por usuário
+✔ Login
 
-🛍️ Loja
+✔ Logout
 
-Listagem de Mangás
+✔ Sessão persistente
 
-Listagem de Action Figures
+---
 
-Página individual de produto
+# 🛒 Sistema de carrinho
 
-Busca por nome de produto
+✔ Adicionar produto
 
-🛒 Carrinho
+✔ Remover produto
 
-Adicionar produtos
+✔ Alterar quantidade
 
-Remover produtos
+✔ Calcular subtotal
 
-Simulação de compra
+✔ Calcular total
 
-🛠️ Administração
+✔ Finalizar compra
 
-Área protegida
+✔ Limpar carrinho automaticamente
 
-Gerenciamento de produtos
+---
 
-Visualização de usuários
+# 🔎 Sistema de busca e filtros
 
-🧠 Conceitos Aplicados
+✔ Busca por nome
 
-Separação entre lógica e visual
+✔ Filtro por preço mínimo
 
-Controle de rotas via Front Controller
+✔ Filtro por preço máximo
 
-Boas práticas com PDO
+✔ Filtro por gênero
 
-Organização de código para fácil manutenção
+✔ Filtro por idade
 
-Estrutura pensada para crescimento futuro
+---
 
-👨‍💻 Autor
+# 📱 Responsividade
 
-Wagner Junior
-Desenvolvedor PHP em formação
-Projeto desenvolvido como parte do processo de transição para o mercado de tecnologia.
+✔ Mobile
+
+✔ Tablet
+
+✔ Desktop
+
+---
+
+# 🌐 Deploy
+
+Compatível com:
+
+✔ InfinityFree
+
+✔ Hostinger
+
+✔ qualquer hospedagem PHP
+
+---
+
+# 📂 Estrutura
+
+/app
+/public
+/vendor
+/config
+
+Arquitetura MVC organizada.
+
+---
+
+# 🎯 Objetivo do projeto
+
+Projeto desenvolvido com foco em:
+
+✔ Portfólio profissional
+
+✔ Demonstração de habilidades full-stack
+
+✔ Boas práticas de mercado
+
+---
+
+# 📈 Nível do projeto
+
+Classificação:
+
+Desenvolvedor Junior Full-Stack
+
+Este projeto demonstra conhecimento suficiente para:
+
+* Estágio
+* Desenvolvedor Junior
+* Freelancer
+
+---
+
+# 🔮 Melhorias futuras (v2.0)
+
+Planejado:
+
+* Sistema de pedidos
+* Painel admin
+* Sistema de imagens no banco
+* CSRF Token
+* Sistema de estoque
+* Pagamento integrado
+
+---
+
+# ✅ Status
+
+Projeto estável
+
+Pronto para produção
+
+Release oficial: v1.0.0
+
+---
+
+# 📎 Licença
+
+Uso livre para fins educacionais e portfólio
